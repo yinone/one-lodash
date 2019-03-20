@@ -1,0 +1,28 @@
+{
+  "name": "one-lodash",
+  "version": "1.0.0",
+  "description": "learning lodash api",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^6.0.2"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/yinone/one-lodash.git"
+  },
+  "keywords": [
+    "lodash",
+    "funtional",
+    "program"
+  ],
+  "author": "Eleven",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yinone/one-lodash/issues"
+  },
+  "homepage": "https://github.com/yinone/one-lodash#readme"
+}

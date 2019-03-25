@@ -26,7 +26,8 @@ function shallowFlat(arr) {
     const item = arr[resIndex]
     
     if (isArray(item)) {
-      result = shallowFlat(item)
+      const _flatArr = shallowFlat(item)
+      
     } else {
       
       result[resIndex] = item

@@ -23,16 +23,7 @@ function shallowFlat(arr) {
   let resIndex = 0
   
   while(resIndex < arr.length) {
-    const item = arr[resIndex]
-    
-    if (isArray(item)) {
-      const _flatArr = shallowFlat(item)
-      
-    } else {
-      
-      result[resIndex] = item
-    }
-    
+    result = arrayPush(result, arr[resIndex])
     resIndex++
   }
   
@@ -49,8 +40,8 @@ function shallowCopy(arr) {
 
 function deepCopy(arr) {
   
-  const result = []
-  return result
+//   const result = []
+  return arr
 }
 
 function arrayPush() {
@@ -60,11 +51,10 @@ function arrayPush() {
     return []
   }
   
+  
   const baseArr = deepCopy(args[0])
   const pushArr = deepCopy(args[1])
   
-  const length = args.length
-  const result = new Array(length)
   let index = 0
   
   while(index < pushArr.length) {
@@ -72,7 +62,9 @@ function arrayPush() {
     baseArr[baseArr.length + index] = pushArr[index]
     index++
   }
-  return result
+  
+  console.log(baseArr)
+  return baseArr
 }
 
 function argumentsToArray(arg) {
@@ -83,15 +75,16 @@ function argumentsToArray(arg) {
   
   const result = new Array(arg.length)
   let resIndex = 0
+  
   while(resIndex < arg.length) {
-    result[resIndex] = arg[result]
+    result[resIndex] = arg[resIndex]
     
     resIndex++
   }
   
+  console.log(result)
   return result
 }
-
 
 function isArguments(arg) {
   return Object.prototype.toString.call(arg) === '[object Arguments]'
@@ -113,5 +106,4 @@ function isObjectLike() {
   
 }
 
-isArray(new Array())
-concat([1,2], 1,2,3,4,5, [[[5]]], {})
+shallowFlat([1,2])

@@ -144,7 +144,5 @@ function concat() {
   return length ? arrayPush(shallowCopy(baseArr), baseFlat(value)) : []
 }
 
-exports.shallowCopy = shallowCopy
-exports.arrayPush = arrayPush
-exports.baseFlat= baseFlat
-exports.concat = concat
+
+module.exports = concat

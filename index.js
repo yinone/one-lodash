@@ -1,6 +1,6 @@
-const chunk = require('./src/chunk')
-const compact = require('./src/compact')
-const concat = require('./src/concat')
+import chunk from './src/Array/chunk'
+import compact from './src/Array/compact'
+import concat from './src/Array/concat'
 
 export default {
   chunk,

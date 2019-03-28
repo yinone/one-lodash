@@ -7,11 +7,10 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^6.0.2",
-    "rollup": "^1.7.4",
-    "rollup-plugin-alias": "^1.5.1"
+    "rollup": "^1.7.4"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --recursive"
   },
   "repository": {
     "type": "git",

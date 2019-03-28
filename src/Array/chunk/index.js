@@ -57,4 +57,4 @@ function _chunk(array, size) {
   return result
 }
 
-module.exports = chunk
+export default chunk

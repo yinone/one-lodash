@@ -1,5 +1,5 @@
 const should = require('chai').should()
-const _ = require('../')
+const _ = require('../..')
 
 describe('chunk', function() {
   describe('#Chunk()', function() {

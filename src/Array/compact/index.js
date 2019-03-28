@@ -35,4 +35,4 @@ function _compact(array) {
   return result
 }
 
-module.exports = compact
+export default compact

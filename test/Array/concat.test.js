@@ -1,5 +1,5 @@
 const should = require('chai').should()
-const _ = require('../')
+const _ = require('../..')
 
 describe('concat', function() {
   describe('#Concat()', function() {

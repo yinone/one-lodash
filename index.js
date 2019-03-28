@@ -2,7 +2,7 @@ const chunk = require('./src/chunk')
 const compact = require('./src/compact')
 const concat = require('./src/concat')
 
-module.exports = {
+export default {
   chunk,
   compact,
   concat

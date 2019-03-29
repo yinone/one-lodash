@@ -5,7 +5,9 @@
   *
   **/
 
- function shallowCopy(arr) {
+import isArray from '../../lang/isArray'
+
+function shallowCopy(arr) {
   if (!isArray(arr)) {
     return []
   }

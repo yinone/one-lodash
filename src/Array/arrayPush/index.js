@@ -5,7 +5,9 @@
   *  @returns {Array} return `array`
   */
 
- function arrayPush(array, values) {
+import isArray from '../../lang/isArray'
+
+function arrayPush(array, values) {
    
   if (!isArray(array) || !isArray(values)) {
     return []

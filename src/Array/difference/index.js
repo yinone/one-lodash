@@ -10,7 +10,8 @@
 
 import isArray from '../lang/isArray'
 import toArray from '../lang/argumentsToArray'
-import baseFlat from ''
+import baseFlat from '../baseFlat'
+
 function difference(array, [values]) {
 
   const arr = toArray(arguments)

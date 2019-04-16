@@ -192,10 +192,56 @@ function concat() {
   return length ? arrayPush(shallowCopy(baseArr), baseFlat(value)) : [];
 }
 
+/**
+ *  Fills elements of array with value from start up to, but not including, end.
+ *
+ *  @param array (Array): The array to fill.
+ *  @param value (*): The value to fill array with.
+ *  @param [start=0] (number): The start position.
+ *  @param [end=array.length] (number): The end position.
+ *  @returns {Array} return result
+ *  @example
+ *
+ *   var array = [1, 2, 3];
+ *
+ *   fill(array, 'a') => ['a', 'a', 'a']
+ *   fill(Array(3), 2) => [2, 2, 2]
+ *   fill([4, 6, 8, 10], '*', 1, 3) => [4, '*', '*', 10]
+ *
+ **/
+
+function fill() {
+  var arr = argumentsToArray(arguments);
+  var baseArr = arr[0];
+  var filled = arr[1];
+  var arrLen = baseArr.length;
+  var start = arr[2] ? arr[2] : 0;
+  var end = arr[3] || arr[3] === 0 ? arr[3] : arrLen;
+
+  if (!filled || !arrLen || start >= arrLen || end < 0) {
+    return [];
+  }
+
+  if (start < 0) {
+    start = arrLen + start;
+  }
+
+  if (end > arrLen) {
+    end = arrLen;
+  }
+
+  while (start < end) {
+    baseArr[start++] = filled;
+  }
+
+  return baseArr;
+}
+
 var index = {
   chunk: chunk,
   compact: compact,
-  concat: concat
+  concat: concat,
+  fill: fill
 };
 
 module.exports = index;

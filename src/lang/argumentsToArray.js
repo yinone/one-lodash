@@ -5,7 +5,9 @@
   *
   **/
 
- function argumentsToArray(arg) {
+import isArguments from './isArguments'
+
+function argumentsToArray(arg) {
   
   if (!isArguments(arg)) {
     return []

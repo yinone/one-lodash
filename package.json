@@ -5,11 +5,18 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "babel-preset-latest": "^6.24.1",
     "chai": "^4.2.0",
     "mocha": "^6.0.2",
-    "rollup": "^1.7.4"
+    "rollup": "^1.7.4",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-node-resolve": "^4.0.1"
   },
   "scripts": {
+    "build": "./node_modules/.bin/rollup -c",
+    "dev": "./node_modules/.bin/rollup -c --watch",
     "test": "mocha --recursive"
   },
   "repository": {

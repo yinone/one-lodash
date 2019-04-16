@@ -10,8 +10,9 @@
 
 import argumentsToArray from '../../lang/argumentsToArray'
 import isArray from '../../lang/isArray'
-import shallowCopy from './shallowCopy'
-import baseFlat from  './baseFlat'
+import shallowCopy from '../shallowCopy'
+import baseFlat from  '../baseFlat'
+import arrayPush from '../arrayPush'
 
 function concat() {
   const args = argumentsToArray(arguments)

@@ -8,6 +8,10 @@
   *  baseFlat(arr) => [1,2,3,4,5,[2],3]
   *
   */
+
+import isArray from '../../lang/isArray'
+import arrayPush from '../arrayPush'
+
 function baseFlat(arr) {
   
   if (!isArray(arr)) {

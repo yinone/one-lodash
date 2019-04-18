@@ -19,7 +19,7 @@
 import toArray from '../../lang/argumentsToArray'
 
 function fill() {
-  const arr = toArray(arguments);
+  const arr = toArray(arguments)
   const baseArr = arr[0];
   const filled = arr[1];
   const arrLen = baseArr.length

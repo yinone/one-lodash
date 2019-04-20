@@ -237,11 +237,51 @@ function fill() {
   return baseArr;
 }
 
+/**
+ * check if value is undefined
+ **/
+function isUndefined(value) {
+  var undefined$1 = void 0;
+  return value === undefined$1;
+}
+
+/** 
+  * create a slice of array with n elements from the beginning
+  * 
+  * @param {Array} array: The Array to query
+  * @param {Number} [n=1]: The number of elements to drop
+  * @returns {Array} result: Returns the slice of array
+  * @example
+  * 
+  * drop([1, 2, 3]) => [2, 3]
+  * drop([1, 2, 3], 3) => []
+  *
+  **/
+
+function drop(array, n) {
+  var len = array && array.length;
+  n = isUndefined(n) ? 1 : n;
+
+  if (!len || n < 0 || n > len) {
+    return [];
+  }
+
+  var result = new Array(len - n);
+  var resIndex = 0;
+
+  while (n < len) {
+    result[resIndex++] = array[n++];
+  }
+
+  return result;
+}
+
 var index = {
   chunk: chunk,
   compact: compact,
   concat: concat,
-  fill: fill
+  fill: fill,
+  drop: drop
 };
 
 module.exports = index;

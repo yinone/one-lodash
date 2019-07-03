@@ -31,4 +31,4 @@ function drop(array, n) {
   return result
 }
 
-  export default drop
+export default drop

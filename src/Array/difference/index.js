@@ -6,23 +6,37 @@
   *  @param {Array} array The array to inspect
   *  @param {...Array} values The values to exclude
   *  @returns {Array} return `array`
+  *  @examples
+  *  
+  *  difference([2,3],[1,3]) => [1]
+  *  difference([2, 2, 2, -0], [0, 2, 3]) => []
   **/
 
-import isArray from '../lang/isArray'
-import toArray from '../lang/argumentsToArray'
-import baseFlat from '../baseFlat'
+import isArray from '../../lang/isArray'
 
-function difference(array, [values]) {
+function difference(arr, ...values) {
 
-  const arr = toArray(arguments)
-  const baseArr = arr[0]
-  const values = arr[1]
-
-  if (!isArray(baseArr)) {
+  if (!isArray(arr)) {
     return []
   }
   
-  
+  if (!values) {
+    return arr
+  }
+
+  const retArr = []
+  const baseArr = values.flat()
+  let i = 0
+
+  while(i < arr.length) {
+    if (!baseArr.includes(arr[i])) {
+      retArr.push(arr[i])
+    }
+
+    i++
+  }
+
+  return retArr
 }
 
 export default difference

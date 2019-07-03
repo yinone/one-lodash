@@ -276,12 +276,55 @@ function drop(array, n) {
   return result;
 }
 
+/**
+  *  Creates an array of array values not included in the other given arrays 
+  *   using SameValueZero for equality comparisons. The order and references 
+  *   of result values are determined by the first array.
+  *    
+  *  @param {Array} array The array to inspect
+  *  @param {...Array} values The values to exclude
+  *  @returns {Array} return `array`
+  *  @examples
+  *  
+  *  difference([2,3],[1,3]) => [1]
+  *  difference([2, 2, 2, -0], [0, 2, 3]) => []
+  **/
+
+function difference(arr) {
+  for (var _len = arguments.length, values = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    values[_key - 1] = arguments[_key];
+  }
+
+  if (!isArray(arr)) {
+    return [];
+  }
+
+  if (!values) {
+    return arr;
+  }
+
+  var retArr = [];
+  var baseArr = values.flat();
+  var i = 0;
+
+  while (i < arr.length) {
+    if (!baseArr.includes(arr[i])) {
+      retArr.push(arr[i]);
+    }
+
+    i++;
+  }
+
+  return retArr;
+}
+
 var index = {
   chunk: chunk,
   compact: compact,
   concat: concat,
   fill: fill,
-  drop: drop
+  drop: drop,
+  difference: difference
 };
 
 module.exports = index;

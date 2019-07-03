@@ -25,11 +25,13 @@ function difference(arr, ...values) {
   }
 
   const retArr = []
-  const baseArr = values.flat()
+  const baseArr = values.flat() //todo recursion flat
   let i = 0
 
   while(i < arr.length) {
     if (!baseArr.includes(arr[i])) {
+
+      // includes use SameValueZero to compare
       retArr.push(arr[i])
     }
 

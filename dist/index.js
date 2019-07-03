@@ -304,11 +304,13 @@ function difference(arr) {
   }
 
   var retArr = [];
-  var baseArr = values.flat();
+  var baseArr = values.flat(); //todo recursion flat
+
   var i = 0;
 
   while (i < arr.length) {
     if (!baseArr.includes(arr[i])) {
+      // includes use SameValueZero to compare
       retArr.push(arr[i]);
     }
 

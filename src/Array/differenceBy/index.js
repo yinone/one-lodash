@@ -4,19 +4,19 @@
   *   of result values are determined by the first array.
   *    
   *  @param {Array} array - The array to inspect
-  *  @param {...Array} values -The values to exclude
+  *  @param {...Array} values - The values to exclude
+  *  @param {Function} [iteratee = _.identity] - The iteratee invoked per element of array and values
   *  @returns {Array} - return new array
   *  @example
-  * 
-  *  difference([2,3],[1,3]) => [1]
-  *  difference([2, 2, 2, -0], [0, 2, 3]) => []
-  **/
+  *  differenceBy([2.1, 1.2], [2.3, 3.4], Math.floor) => [1.2]
+  *  difference([{ 'x': 2 }, { 'x': 1 }], [{ 'x': 1 }], 'x') => [{'x': 2}]
+  */
 
-import isArray from '../../lang/isArray'
-import baseFlat from '../baseFlat'
-
-function difference(arr, ...values) {
-
+ import isArray from '../../lang/isArray'
+ import baseFlat from '../baseFlat'
+ 
+ function differenceBy(arr, ...values, iteratee) {
+ 
   if (!isArray(arr)) {
     return []
   }
@@ -25,8 +25,14 @@ function difference(arr, ...values) {
     return arr
   }
 
+  let baseArr = baseFlat(values) //todo recursion flat
   const retArr = []
-  const baseArr = baseFlat(values) //todo recursion flat
+
+  if (iteratee) {
+    arr = arr.map(iteratee)
+    baseArr = baseArr.map(iteratee)
+  }
+
   let i = 0
 
   while(i < arr.length) {
@@ -41,5 +47,5 @@ function difference(arr, ...values) {
 
   return retArr
 }
-
-export default difference
+ 
+export default differenceBy

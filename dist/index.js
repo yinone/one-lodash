@@ -1,8 +1,9 @@
 'use strict';
 
-/* @param {Array} array The array to process.
- * @param {number} [size=1] The length of each chunk
- * @returns {Array} Returns the new array of chunks.
+/**
+ * @param {Array} array - The array to process.
+ * @param {number} [size=1] - The length of each chunk
+ * @returns {Array} - Returns the new array of chunks.
  * @example
  *
  * chunk(['a', 'b', 'c', 'd'], 2)
@@ -35,12 +36,11 @@ function chunk(array, size) {
   return chunkArray;
 } // lodash
 
-/*
+/**
   * Creates an array with all falsey values removed. The values `false`, `null`, `0`, `""`, `undefined`, and `NaN` are falsey.
-  * @param {Array} array The array to compact
-  * @returns {Array} Return the new array of filtered values
+  * @param {Array} array - The array to compact
+  * @returns {Array} - Return the new array of filtered values
   * @example
-  * 
   *  const array = [1,2,3,0,null,false,undefined,NaN,'']
   *  _compact(array) => [1,2,3]
   */
@@ -111,9 +111,9 @@ function shallowCopy(arr) {
 
 /**
   *  append values to array
-  *  @param {Array} array The array to modify
-  *  @param {Array} values the values to append
-  *  @returns {Array} return `array`
+  *  @param {Array} array - The array to modify
+  *  @param {Array} values - the values to append
+  *  @returns {Array} - return `array`
   */
 
 function arrayPush(array, values) {
@@ -135,10 +135,9 @@ function arrayPush(array, values) {
 
 /**
   *  flat array
-  *  @param {Array} arr The array to flat
-  *  @returns {Array} return `result`
+  *  @param {Array} arr - The array to flat
+  *  @returns {Array} - return `result`
   *  @example
-  *  
   *  const arr = [1,2,3, [4,5], [[2], 3]]
   *  baseFlat(arr) => [1,2,3,4,5,[2],3]
   *
@@ -169,11 +168,10 @@ function baseFlat(arr) {
 
 /**
   *  concat array
-  *  @param {Array} array The array to concatenate
-  *  @param {*}  values The values to concatenate
-  *  @returns {Array} return the new array
+  *  @param {Array} array - The array to concatenate
+  *  @param {*}  values - The values to concatenate
+  *  @returns {Array} - return the new array
   *  @example
-  *  
   *  concat([], 2, [3], [[2,5]]) => [2,5, [2,5]]
   **/
 
@@ -195,11 +193,11 @@ function concat() {
 /**
  *  Fills elements of array with value from start up to, but not including, end.
  *
- *  @param array (Array): The array to fill.
- *  @param value (*): The value to fill array with.
- *  @param [start=0] (number): The start position.
- *  @param [end=array.length] (number): The end position.
- *  @returns {Array} return result
+ *  @param {array} array - The array to fill.
+ *  @param {*} value - The value to fill array with.
+ *  @param {number} [start=0] - The start position.
+ *  @param {number} [end=array.length] - The end position.
+ *  @returns {array} - return result
  *  @example
  *
  *   var array = [1, 2, 3];
@@ -248,9 +246,9 @@ function isUndefined(value) {
 /** 
   * create a slice of array with n elements from the beginning
   * 
-  * @param {Array} array: The Array to query
-  * @param {Number} [n=1]: The number of elements to drop
-  * @returns {Array} result: Returns the slice of array
+  * @param {Array} array -The Array to query
+  * @param {Number} [n=1] - The number of elements to drop
+  * @returns {Array} - Returns the slice of array
   * @example
   * 
   * drop([1, 2, 3]) => [2, 3]
@@ -281,11 +279,11 @@ function drop(array, n) {
   *   using SameValueZero for equality comparisons. The order and references 
   *   of result values are determined by the first array.
   *    
-  *  @param {Array} array The array to inspect
-  *  @param {...Array} values The values to exclude
-  *  @returns {Array} return `array`
-  *  @examples
-  *  
+  *  @param {Array} array - The array to inspect
+  *  @param {...Array} values -The values to exclude
+  *  @returns {Array} - return new array
+  *  @example
+  * 
   *  difference([2,3],[1,3]) => [1]
   *  difference([2, 2, 2, -0], [0, 2, 3]) => []
   **/
@@ -304,7 +302,7 @@ function difference(arr) {
   }
 
   var retArr = [];
-  var baseArr = values.flat(); //todo recursion flat
+  var baseArr = baseFlat(values); //todo recursion flat
 
   var i = 0;
 

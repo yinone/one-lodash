@@ -1,10 +1,9 @@
 /**
   *  concat array
-  *  @param {Array} array The array to concatenate
-  *  @param {*}  values The values to concatenate
-  *  @returns {Array} return the new array
+  *  @param {Array} array - The array to concatenate
+  *  @param {*}  values - The values to concatenate
+  *  @returns {Array} - return the new array
   *  @example
-  *  
   *  concat([], 2, [3], [[2,5]]) => [2,5, [2,5]]
   **/
 

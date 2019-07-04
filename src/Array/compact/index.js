@@ -1,9 +1,8 @@
-/*
+/**
   * Creates an array with all falsey values removed. The values `false`, `null`, `0`, `""`, `undefined`, and `NaN` are falsey.
-  * @param {Array} array The array to compact
-  * @returns {Array} Return the new array of filtered values
+  * @param {Array} array - The array to compact
+  * @returns {Array} - Return the new array of filtered values
   * @example
-  * 
   *  const array = [1,2,3,0,null,false,undefined,NaN,'']
   *  _compact(array) => [1,2,3]
   */

@@ -1,9 +1,9 @@
 /** 
   * create a slice of array with n elements from the beginning
   * 
-  * @param {Array} array: The Array to query
-  * @param {Number} [n=1]: The number of elements to drop
-  * @returns {Array} result: Returns the slice of array
+  * @param {Array} array -The Array to query
+  * @param {Number} [n=1] - The number of elements to drop
+  * @returns {Array} - Returns the slice of array
   * @example
   * 
   * drop([1, 2, 3]) => [2, 3]

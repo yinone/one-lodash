@@ -1,11 +1,11 @@
 /**
  *  Fills elements of array with value from start up to, but not including, end.
  *
- *  @param array (Array): The array to fill.
- *  @param value (*): The value to fill array with.
- *  @param [start=0] (number): The start position.
- *  @param [end=array.length] (number): The end position.
- *  @returns {Array} return result
+ *  @param {array} array - The array to fill.
+ *  @param {*} value - The value to fill array with.
+ *  @param {number} [start=0] - The start position.
+ *  @param {number} [end=array.length] - The end position.
+ *  @returns {array} - return result
  *  @example
  *
  *   var array = [1, 2, 3];

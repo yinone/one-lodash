@@ -1,8 +1,8 @@
 /**
   *  append values to array
-  *  @param {Array} array The array to modify
-  *  @param {Array} values the values to append
-  *  @returns {Array} return `array`
+  *  @param {Array} array - The array to modify
+  *  @param {Array} values - the values to append
+  *  @returns {Array} - return `array`
   */
 
 import isArray from '../../lang/isArray'
